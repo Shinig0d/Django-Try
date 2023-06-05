@@ -1,0 +1,12 @@
+{% extends "todoList/layout.html" %}
+
+{% block body %}
+<h1>ToDo:</h1>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'todoList:add' %}">Add Tasks</a>
+{% endblock %}
