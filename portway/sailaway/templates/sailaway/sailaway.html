@@ -1,0 +1,21 @@
+{% extends "sailaway/layout.html" %}
+{% block body %}
+    <h1>Sailaway {{sailaway_id}}</h1>
+
+    <ul>
+        <li>Origin: {{sailaway.origin}}</li>
+        <li>Destination: {{sailaway.destination}}</li>
+        <li>Duration: {{sailaway.duration}}</li>
+    </ul>
+
+    <h2>Passengers</h2>
+    <ul>
+    {% for passenger in passengers %}
+        <li>{{ passenger }}</li>
+        {% empty %}
+        <li>No Passengers</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'index' %}">Back To Index</a>
+{% endblock %}

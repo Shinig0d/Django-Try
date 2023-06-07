@@ -1,0 +1,13 @@
+{% extends "sailaway/layout.html" %}
+
+{% block body %}
+    <h1>Sailaway</h1>
+    <ul>
+        {% for sailaway in sailaways %}
+        <a href="{% url 'sailaway' sailaway.id %}" style="text-decoration: none; color: black;">
+            <li>Sailaway {{ sailaway.id }}: {{ sailaway.origin }} to {{ sailaway.destination }}</li>
+        </a>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
